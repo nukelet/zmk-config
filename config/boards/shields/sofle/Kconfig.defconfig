@@ -1,20 +1,48 @@
+# common stuff
+config ZMK_DISPLAY
+    default y
+
+config ZMK_SPLIT
+    default y
+
+# specific to central device
 if ZMK_SPLIT_ROLE_CENTRAL
 
 config ZMK_KEYBOARD_NAME
     default "sofle-peixoto"
 
+# when the left shield is a central device
+if SHIELD_SOFLE_LEFT
+
+config ZMK_WIDGET_WPM_STATUS
+    default y
+
+config ZMK_WIDGET_LAYER_STATUS
+    default y
+
+config ZMK_WIDGET_BATTERY_STATUS_SHOW_PERCENTAGE
+    default y
+
+endif # SHIELD_SOFLE_LEFT
+
+endif # ZMK_SPLIT_ROLE_CENTRAL
+
+# for peripherals
+if !ZMK_SPLIT_ROLE_CENTRAL
+
+config ZMK_WIDGET_PERIPHERAL_STATUS
+    default y
+
+config ZMK_WIDGET_BATTERY_STATUS_SHOW_PERCENTAGE
+    default y
+
 endif
+
+# for the dongle specifically
 
 if SHIELD_SOFLE_DONGLE
 
-# Max 16 characters in keyboard name
-config ZMK_KEYBOARD_NAME
-    default "sofle-peixoto-dongle"
-
 config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-config ZMK_SPLIT
     default y
 
 # Set this to the number of peripherals your dongle will have.
