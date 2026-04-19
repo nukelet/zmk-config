@@ -1,3 +1,10 @@
+if ZMK_SPLIT_ROLE_CENTRAL
+
+config ZMK_KEYBOARD_NAME
+    default "sofle-peixoto"
+
+endif
+
 if SHIELD_SOFLE_DONGLE
 
 # Max 16 characters in keyboard name
