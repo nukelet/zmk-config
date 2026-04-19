@@ -22,7 +22,7 @@ include:
   - board: nice_nano_v2
     shield: settings_reset
   - boards: nice_nano_v2
-    shield: sofle_dongle dongle_display
+    shield: "sofle_dongle dongle_display"
   - board: nice_nano_v2
     shield: sofle_left
     cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
